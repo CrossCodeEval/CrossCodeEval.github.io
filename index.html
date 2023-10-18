@@ -131,7 +131,9 @@
       <br>
       -->
       <h2 class="subtitle has-text-centered">
-        <b>TL; DR</b> We present <span class="dnerf">CrossCodeEval</span>, a diverse and multilingual code completion benchmark that necessitates cross-file contextual understanding to complete the code accurately. Experiments show that <span class="dnerf">CrossCodeEval</span> is extremely challenging when the relevant cross-file context is absent, and we see clear improvements when adding these context into the prompt.
+        <center><h2 class="title is-3">TL; DR</h2> </center>
+        <br>
+        We present <span class="dnerf">CrossCodeEval</span>, a diverse and multilingual code completion benchmark that necessitates cross-file contextual understanding to complete the code accurately. Experiments show that <span class="dnerf">CrossCodeEval</span> is extremely challenging when the relevant cross-file context is absent, and we see clear improvements when adding these context into the prompt.
       </h2>
       <p align="center">
         <img src="src/Cross-file-context-dataset-motivation.png" width="100%" align="middle" class="center"> <!-- To .gif format-->
@@ -248,22 +250,25 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Analysis</h2>
         <div class="content has-text-justified">
+          <center><h2 class="title is-4">Improved vs. Degraded Code Completions</h2></center>
           <p>
-            <b>Improved vs. Degraded Code Completions: </b>Looking at changes in the number of correct completions (based on exact match to the references) across different prompt settings, we find all models follow a trend that the performance improves with better cross-file context. However, the variation of correct/incorrect generation is significant among different models.
+            Looking at changes in the number of correct completions (based on exact match to the references) across different prompt settings, we find all models follow a trend that the performance improves with better cross-file context. However, the variation of correct/incorrect generation is significant among different models.
           </p>
         <img src="src/trend.png" class="center">
         </div>
 
         <div class="content has-text-justified">
+          <center><h2 class="title is-4">Identifier Overlap with Retrieved Cross-file Context</h2></center>
           <p>
-            <b>Identifier Overlap with Retrieved Cross-file Context: </b>Identifiers are a significant part of programming language constructs that cover API mentions in source code. We find that an increased ratio of identifier overlap between the retrieved context and the reference solution generally results in higher performance, demonstrating a positive correlation. This calls for an investigation into retrieval techniques, with a particular emphasis on key terms like identifiers for cross-file context retrieval.
+            Identifiers are a significant part of programming language constructs that cover API mentions in source code. We find that an increased ratio of identifier overlap between the retrieved context and the reference solution generally results in higher performance, demonstrating a positive correlation. This calls for an investigation into retrieval techniques, with a particular emphasis on key terms like identifiers for cross-file context retrieval.
           </p>
         <img src="src/identifier_overlap.png" class="center">
         </div>
 
         <div class="content has-text-justified">
+          <center><h2 class="title is-4"><span class="dnerf">CrossCodeEval</span> as Code Retrieval Benchmark</h2></center>
           <p>
-            <b><span class="dnerf">CrossCodeEval</span> as Code Retrieval Benchmark: </b> Given the strong dependency that the correct prediction requires an accurate retrieval of relevant cross-file context, we propose to use <span class="dnerf">CrossCodeEval</span> as a code retrieval benchmark. We find that OpenAI's ada embedding generally performs the best, but its downstream generation accuracy is still suboptimal (<20 EM), calling for future development of better code retriever.
+            Given the strong dependency that the correct prediction requires an accurate retrieval of relevant cross-file context, we propose to use <span class="dnerf">CrossCodeEval</span> as a code retrieval benchmark. We find that OpenAI's ada embedding generally performs the best, but its downstream generation accuracy is still suboptimal (<20 EM), calling for future development of better code retriever.
           </p>
         <img src="src/retrieval_bench.png" class="center">
         </div>
